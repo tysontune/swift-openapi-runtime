@@ -14,7 +14,13 @@
 import Foundation
 
 /// The protocol that all generated `AcceptableContentType` enums conform to.
+#if !os(Android)
 public protocol AcceptableProtocol: RawRepresentable, Sendable, Hashable, CaseIterable where RawValue == String {}
+#else
+public protocol AcceptableProtocol: Sendable, Hashable {
+    var rawValue: String { get }
+}
+#endif
 
 /// A quality value used to describe the order of priority in a comma-separated
 /// list of values, such as in the Accept header.
