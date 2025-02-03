@@ -48,6 +48,7 @@ public struct QualityValue: Sendable, Hashable {
     public var doubleValue: Double { Double(thousands) / 1000 }
 }
 
+#if !os(Android)
 extension QualityValue: RawRepresentable {
     /// Creates a new `QualityValue` instance from a raw string value.
     ///
@@ -81,6 +82,7 @@ extension QualityValue: ExpressibleByFloatLiteral {
     /// - Parameter value: A floating-point literal value representing the quality value.
     public init(floatLiteral value: Double) { self.init(doubleValue: value) }
 }
+#endif
 
 extension Array {
 
