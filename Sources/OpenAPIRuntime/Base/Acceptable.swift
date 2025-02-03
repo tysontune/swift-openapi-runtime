@@ -111,10 +111,18 @@ public struct AcceptHeaderContentType<ContentType: AcceptableProtocol>: Sendable
     /// - Parameters:
     ///   - contentType: The value representing the content type.
     ///   - quality: The quality of the content type, between 0.0 and 1.0.
+    
+    #if !os(Android)
     public init(contentType: ContentType, quality: QualityValue = 1.0) {
         self.quality = quality
         self.contentType = contentType
     }
+    #else
+    public init(contentType: ContentType, quality: QualityValue) {
+        self.quality = quality
+        self.contentType = contentType
+    }
+    #endif
 
     /// Returns the default set of acceptable content types for this type, in
     /// the order specified in the OpenAPI document.
@@ -125,6 +133,8 @@ extension AcceptHeaderContentType: RawRepresentable {
     /// Initializes an `AcceptHeaderContentType` instance from its raw string value.
     ///
     /// - Parameter rawValue: The raw string value representing the content type.
+    
+    #if !os(Android)
     public init?(rawValue: String) {
         guard let validMimeType = OpenAPIMIMEType(rawValue) else {
             // Invalid MIME type.
@@ -146,6 +156,7 @@ extension AcceptHeaderContentType: RawRepresentable {
         }
         self.init(contentType: typeAndSubtype, quality: quality)
     }
+    #endif
 
     /// The raw representation of the content negotiation as a MIME type string.
     public var rawValue: String { contentType.rawValue + (quality.isDefault ? "" : "; q=\(quality.rawValue)") }
