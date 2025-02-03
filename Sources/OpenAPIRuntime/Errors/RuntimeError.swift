@@ -16,7 +16,7 @@ import struct Foundation.Data
 import HTTPTypes
 
 /// Error thrown by generated code.
-internal enum RuntimeError: Error, CustomStringConvertible, LocalizedError, PrettyStringConvertible {
+enum RuntimeError: Error, CustomStringConvertible, LocalizedError, PrettyStringConvertible {
 
     // Miscs
     case invalidServerURL(String)
@@ -129,7 +129,7 @@ internal enum RuntimeError: Error, CustomStringConvertible, LocalizedError, Pret
 ///   - expectedStatus: The expected HTTP response status as a string.
 ///   - response: The HTTP response data.
 /// - Throws: An error indicating an unexpected response status.
-@_spi(Generated) public func throwUnexpectedResponseStatus(expectedStatus: String, response: any Sendable) throws
+public func throwUnexpectedResponseStatus(expectedStatus: String, response: any Sendable) throws
     -> Never
 { throw RuntimeError.unexpectedResponseStatus(expectedStatus: expectedStatus, response: response) }
 
@@ -139,7 +139,7 @@ internal enum RuntimeError: Error, CustomStringConvertible, LocalizedError, Pret
 ///   - expectedContent: The expected content as a string.
 ///   - body: The response body data.
 /// - Throws: An error indicating an unexpected response body content.
-@_spi(Generated) public func throwUnexpectedResponseBody(expectedContent: String, body: any Sendable) throws -> Never {
+public func throwUnexpectedResponseBody(expectedContent: String, body: any Sendable) throws -> Never {
     throw RuntimeError.unexpectedResponseBody(expectedContent: expectedContent, body: body)
 }
 

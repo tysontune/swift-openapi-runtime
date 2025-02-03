@@ -12,7 +12,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-@_spi(Generated) extension Decoder {
+extension Decoder {
 
     // MARK: - Coding SPI
 
@@ -94,7 +94,7 @@
     }
 }
 
-@_spi(Generated) extension Encoder {
+extension Encoder {
     /// Encodes additional properties into the encoder.
     ///
     /// The properties are encoded directly into the encoder, rather that

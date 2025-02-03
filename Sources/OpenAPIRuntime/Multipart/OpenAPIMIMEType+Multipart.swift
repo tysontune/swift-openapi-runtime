@@ -11,7 +11,7 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 //===----------------------------------------------------------------------===//
-@_spi(Generated) extension Optional where Wrapped == OpenAPIMIMEType {
+extension Optional where Wrapped == OpenAPIMIMEType {
 
     /// Unwraps the boundary parameter from the parsed MIME type.
     /// - Returns: The boundary value.

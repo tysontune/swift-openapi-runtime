@@ -25,7 +25,7 @@ import struct Foundation.URLComponents
 /// invocation, and response serialization.
 ///
 /// Do not call this directly, only invoked by generated code.
-@_spi(Generated) public struct UniversalServer<APIHandler: Sendable>: Sendable {
+public struct UniversalServer<APIHandler: Sendable>: Sendable {
 
     /// The URL of the server, used to determine the path prefix for
     /// registered request handlers.

@@ -15,7 +15,7 @@
 /// The serialization style used by a parameter.
 ///
 /// Details: https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.4.md#fixed-fields-10
-@_spi(Generated) public enum ParameterStyle: Sendable {
+public enum ParameterStyle: Sendable {
 
     /// The form style.
     ///

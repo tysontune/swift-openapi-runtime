@@ -23,7 +23,7 @@ import struct Foundation.URL
 /// invocation, and response deserialization.
 ///
 /// Do not call this directly, only invoked by generated code.
-@_spi(Generated) public struct UniversalClient: Sendable {
+public struct UniversalClient: Sendable {
 
     /// The URL of the server, used as the base URL for requests made by the
     /// client.
@@ -54,13 +54,14 @@ import struct Foundation.URL
     /// Creates a new client.
     public init(
         serverURL: URL = .defaultOpenAPIServerURL,
-        configuration: Configuration = .init(),
+//        configuration: Configuration = .init(),
         transport: any ClientTransport,
         middlewares: [any ClientMiddleware] = []
     ) {
         self.init(
             serverURL: serverURL,
-            converter: Converter(configuration: configuration),
+            converter: Converter(configuration: .init()),
+//            converter: Converter(configuration: configuration),
             transport: transport,
             middlewares: middlewares
         )

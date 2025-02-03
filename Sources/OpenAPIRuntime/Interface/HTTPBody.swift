@@ -16,6 +16,8 @@ import class Foundation.NSLock
 import protocol Foundation.LocalizedError
 import struct Foundation.Data  // only for convenience initializers
 
+import Foundation
+
 /// A body of an HTTP request or HTTP response.
 ///
 /// Under the hood, it represents an async sequence of byte chunks.

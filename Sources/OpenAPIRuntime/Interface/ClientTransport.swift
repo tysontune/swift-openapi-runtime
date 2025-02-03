@@ -14,6 +14,7 @@
 
 import HTTPTypes
 import struct Foundation.URL
+import Foundation
 
 /// A type that performs HTTP operations.
 ///

@@ -19,7 +19,7 @@ import class Foundation.JSONEncoder
 import class Foundation.JSONDecoder
 
 /// Converter between generated and HTTP currency types.
-@_spi(Generated) public struct Converter: Sendable {
+public struct Converter: Sendable {
 
     /// Configuration used to set up the converter.
     public let configuration: Configuration

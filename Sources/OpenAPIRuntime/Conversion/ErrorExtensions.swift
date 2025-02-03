@@ -44,7 +44,7 @@ extension DecodingError {
     ///   the type.
     ///   - errors: The errors encountered when decoding individual cases.
     /// - Returns: A decoding error.
-    @_spi(Generated) public static func failedToDecodeOneOfSchema(
+    public static func failedToDecodeOneOfSchema(
         type: Any.Type,
         codingPath: [any CodingKey],
         errors: [any Error]
@@ -67,7 +67,7 @@ extension DecodingError {
     ///   - codingPath: The coding path to the decoder that attempted to decode
     ///   the type, with the discriminator value as the last component.
     /// - Returns: A decoding error.
-    @_spi(Generated) public static func unknownOneOfDiscriminator(
+    public static func unknownOneOfDiscriminator(
         discriminatorKey: any CodingKey,
         discriminatorValue: String,
         codingPath: [any CodingKey]
@@ -92,7 +92,7 @@ extension DecodingError {
     ///   the type.
     ///   - errors: The errors encountered when decoding individual cases.
     /// - Throws: An error of type `DecodingError.failedToDecodeAnySchema` if none of the child schemas were successfully decoded.
-    @_spi(Generated) public static func verifyAtLeastOneSchemaIsNotNil(
+    public static func verifyAtLeastOneSchemaIsNotNil(
         _ values: [Any?],
         type: Any.Type,
         codingPath: [any CodingKey],

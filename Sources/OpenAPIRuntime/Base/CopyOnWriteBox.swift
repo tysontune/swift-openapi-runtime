@@ -16,7 +16,7 @@
 ///
 /// It also enables recursive types by introducing a "box" into the cycle, which
 /// allows the owning type to have a finite size.
-@_spi(Generated) public struct CopyOnWriteBox<Wrapped> {
+public struct CopyOnWriteBox<Wrapped> {
 
     /// The reference type storage for the box.
     @usableFromInline internal final class Storage {
